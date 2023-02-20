@@ -38,7 +38,7 @@ function ProjectDetail({ project }) {
 
   return (
     <section className="project-detailed">
-      <h1 className="project-title">{project.desc}</h1>
+      <h1 className="project-title">{project.name}</h1>
       <div className="project-links">
         {project.link && websiteLink}
         {project.github && githubLink}
@@ -51,7 +51,7 @@ function ProjectDetail({ project }) {
           </p>
         ))}
       </div>
-      <p className="project-goal">{project.goal}</p>
+      <p className="project-goal">{project.desc}</p>
     </section>
   );
 }

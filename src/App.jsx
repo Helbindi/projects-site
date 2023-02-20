@@ -3,10 +3,13 @@ import { projects } from "./data/projects";
 import Projects from "./components/Projects";
 import Profile from "./components/Profile";
 import Inventory from "./components/Inventory";
+import NavBar from "./components/NavBar";
+import MobileMenu from "./components/MobileMenu";
 
 function App() {
   const [selected, setSelected] = useState("all");
   const [count, setCount] = useState(0);
+  const [navOpen, setNavOpen] = useState(false);
 
   const filtered = projects.filter((project) => {
     if (selected === "all") {
@@ -54,17 +57,41 @@ function App() {
       setCount(filtered.length - 1);
     }
   }
+
+  function handleNav(e) {
+    e.preventDefault();
+    if (!navOpen) {
+      setNavOpen(true);
+    } else {
+      setNavOpen(false);
+    }
+  }
   return (
-    <>
-      <Profile />
-      <Inventory selected={selected} handleChange={handleChange} />
-      <Projects
+    <section className="main-container">
+      <NavBar
         projects={filtered}
         count={count}
-        handleDecrement={handleDecrement}
-        handleIncrement={handleIncrement}
+        navOpen={navOpen}
+        handleNav={handleNav}
+        selected={selected}
+        handleChange={handleChange}
       />
-    </>
+      {navOpen && (
+        <MobileMenu selected={selected} handleChange={handleChange} />
+      )}
+      <section className="desktop-project">
+        <article className="side-menu">
+          <Profile />
+          <Inventory selected={selected} handleChange={handleChange} />
+        </article>
+        <Projects
+          projects={filtered}
+          count={count}
+          handleDecrement={handleDecrement}
+          handleIncrement={handleIncrement}
+        />
+      </section>
+    </section>
   );
 }
 
