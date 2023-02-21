@@ -6,6 +6,7 @@ function ProjectDetail({ project }) {
       className="project-link"
       href={project.github}
       target="_blank"
+      rel="noopener noreferrer"
       title="Github"
     >
       <img
@@ -19,6 +20,7 @@ function ProjectDetail({ project }) {
       className="project-link"
       href={project.figma}
       target="_blank"
+      rel="noopener noreferrer"
       title="Figma"
     >
       <img
@@ -28,7 +30,12 @@ function ProjectDetail({ project }) {
     </a>
   );
   const websiteLink = (
-    <a href={project.link} target="_blank" title="Deployment">
+    <a
+      href={project.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      title="Deployment"
+    >
       <img
         src="https://firebasestorage.googleapis.com/v0/b/front-end-glossary.appspot.com/o/icons%2Ficons8-web-design-48.png?alt=media"
         alt="deployment-link"

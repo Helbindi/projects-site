@@ -82,6 +82,7 @@ function App() {
       <section className="desktop-project">
         <Profile />
         <Inventory selected={selected} handleChange={handleChange} />
+        <hr className="grid-divider" />
         <Projects
           projects={filtered}
           count={count}

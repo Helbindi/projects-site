@@ -130,7 +130,7 @@ a:visited {
   background-size: cover;
   background-repeat: no-repeat;
 
-  width: 300px;
+  width: 100%;
   padding: 1em;
   border-radius: 1rem;
   color: var(--secondary-text);
@@ -171,6 +171,46 @@ a:visited {
 /* Profile CSS */
 .profile {
   display: none;
+  min-width: 275px;
+  font-size: 1rem;
+  padding: 1em;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border: 5px dashed var(--primary-text);
+  border-radius: 2em;
+}
+
+.profile-img {
+  height: 128px;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.profile-title {
+  background-color: black;
+  padding: 1em 1.5em;
+  border-radius: 1em;
+  text-align: center;
+}
+
+.profile-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1em;
+  padding: 0;
+}
+
+.profile-list li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 /* NavBar CSS */
@@ -234,7 +274,7 @@ a:visited {
   .desktop-project {
     padding: 2em;
     display: grid;
-    gap: 1em;
+    gap: 0.5em;
     grid-template-columns: 30% 5% 65%;
     grid-template-rows: 40% 60%;
     grid-template-areas:
@@ -250,8 +290,7 @@ a:visited {
     grid-area: divider;
     content: "";
     border-right: 3px solid rgb(128, 128, 128);
-    border-radius: 1em;
-    height: 100%;
+    height: 80%;
   }
 
   .projects-body {
@@ -288,6 +327,7 @@ a:visited {
   .project-slider {
     max-width: 700px;
     height: 350px;
+    box-shadow: 10px 8px 10px rgb(0, 0, 0, 0.5);
   }
 
   .tech-type {
@@ -295,8 +335,8 @@ a:visited {
   }
 
   .profile {
+    display: flex;
     grid-area: profile;
-    display: block;
     align-self: center;
     justify-self: center;
   }
@@ -310,8 +350,14 @@ a:visited {
     display: flex;
     justify-self: center;
     align-self: flex-start;
+    width: 300px;
     height: 400px;
     padding: 0;
+
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 1em;
+
+    box-shadow: 10px 8px 10px rgb(0, 0, 0, 0.5);
   }
 
   .nav-bar {
