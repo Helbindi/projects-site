@@ -6,17 +6,23 @@
   font-size: 10px;
   scroll-behavior: smooth;
   -webkit-tap-highlight-color: transparent;
+
+  --primary-text: #ffa500;
+  --secondary-text: gold;
 }
 
 body {
-  color: #ffa500;
+  background-image: url("./assets/background.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding-bottom: 5em;
+
   background-color: #222731;
+  color: var(--primary-text);
   margin: 0;
   padding: 0;
-}
-
-.main-container {
-  position: absolute;
 }
 
 .projects-body {
@@ -24,7 +30,6 @@ body {
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
-  height: 100vh;
 }
 
 /* Project Slider CSS */
@@ -45,7 +50,7 @@ body {
   outline: none;
   border: none;
   cursor: pointer;
-  color: orange;
+  color: var(--primary-text);
   background-color: black;
   opacity: 0.4;
   z-index: 99;
@@ -74,8 +79,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 2em 3em 2em;
   min-width: 320px;
+  padding: 0 2em 7em 2em;
 }
 
 .project-title {
@@ -92,7 +97,7 @@ body {
 
 .tech-type {
   background-color: black;
-  color: orange;
+  color: var(--primary-text);
   font-weight: 600;
   padding: 5px 10px 5px 10px;
   border-radius: 1em;
@@ -114,9 +119,13 @@ a:visited {
   cursor: pointer;
 }
 
+.projects-header {
+  display: none;
+}
+
 /* Inventory Menu CSS*/
 .inv-menu {
-  background-image: url("https://firebasestorage.googleapis.com/v0/b/ninohuh-d7b3c.appspot.com/o/Background%2Finventory.png?alt=media");
+  background-image: url("./assets/inventory.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -124,7 +133,7 @@ a:visited {
   width: 300px;
   padding: 1em;
   border-radius: 1rem;
-  color: gold;
+  color: var(--secondary-text);
 
   display: none;
   flex-direction: column;
@@ -134,7 +143,7 @@ a:visited {
 
 .inv-menu h2 {
   margin: 0;
-  border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 3px solid var(--secondary-text);
 }
 
 .inv-items {
@@ -197,7 +206,7 @@ a:visited {
   background-repeat: no-repeat;
 
   padding: 2em 0 2em 0;
-  color: gold;
+  color: var(--secondary-text);
 
   display: flex;
   flex-direction: column;
@@ -207,20 +216,65 @@ a:visited {
 
 .mobile-menu h2 {
   margin: 0;
-  border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 3px solid var(--secondary-text);
 }
 
-@media screen and (min-width: 768px) {
-  .desktop-project {
+.grid-divider {
+  display: none;
+}
+
+@media screen and (min-width: 1000px) {
+  .main-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    font-size: 1.2rem;
   }
 
-  .side-menu {
+  .desktop-project {
+    padding: 2em;
+    display: grid;
+    gap: 1em;
+    grid-template-columns: 30% 5% 65%;
+    grid-template-rows: 40% 60%;
+    grid-template-areas:
+      "profile divider details"
+      "inventory divider details";
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+  }
+
+  .grid-divider {
+    display: block;
+    grid-area: divider;
+    content: "";
+    border-right: 3px solid rgb(128, 128, 128);
+    border-radius: 1em;
+    height: 100%;
   }
 
   .projects-body {
-    font-size: 1em;
-    padding-top: 2em;
-    max-width: 900px;
+    grid-area: details;
+    align-self: flex-start;
+    justify-self: center;
+  }
+
+  .projects-header {
+    display: block;
+  }
+
+  .project-detailed {
+    padding-bottom: 0em;
+  }
+
+  .project-title {
+    font-size: 1.5rem;
+  }
+
+  .project-desc {
+    max-width: 800px;
+    min-height: 500px;
   }
 
   .btn {
@@ -232,7 +286,8 @@ a:visited {
   }
 
   .project-slider {
-    height: 400px;
+    max-width: 700px;
+    height: 350px;
   }
 
   .tech-type {
@@ -240,7 +295,10 @@ a:visited {
   }
 
   .profile {
+    grid-area: profile;
     display: block;
+    align-self: center;
+    justify-self: center;
   }
 
   .mobile-menu {
@@ -248,7 +306,12 @@ a:visited {
   }
 
   .inv-menu {
+    grid-area: inventory;
     display: flex;
+    justify-self: center;
+    align-self: flex-start;
+    height: 400px;
+    padding: 0;
   }
 
   .nav-bar {

@@ -45,7 +45,7 @@ export const projects = [
       "https://firebasestorage.googleapis.com/v0/b/front-end-glossary.appspot.com/o/projects%2Fglossary.png?alt=media",
   },
   {
-    name: "Mari's Secret Shop Calculation/Analysis - Lost Ark",
+    name: "Mari's Secret Shop Calculation/Analysis",
     link: "https://maris-bargin.vercel.app/",
     technologies: ["Svelte", "Firebase", "CSS"],
     desc: "In 2022 a new MMO came out called Lost Ark that I started playing with my friend and his guild. In this game there was a separate currency (blue crystals - could be purchased with gold or real money) apart from in-game gold that could be used to buy items. My friend created a google spreadsheet for the guild to determine whether directly spending gold to buy items or using gold to buy blue crystals to buy items was more cost effective. I thought that rather than read and modify a spreadsheet, I would make a website that does the same thing. At the time I read about Svelte, so I decided to try learning and using it to make this website and have Firebase as the backend to keep track of item and blue crystal prices. The website would accept user input about current prices and determine which method was more cost effective. It would also keep record of all user inputs into the database to track changes in price over time. ",

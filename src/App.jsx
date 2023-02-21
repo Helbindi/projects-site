@@ -80,10 +80,8 @@ function App() {
         <MobileMenu selected={selected} handleChange={handleChange} />
       )}
       <section className="desktop-project">
-        <article className="side-menu">
-          <Profile />
-          <Inventory selected={selected} handleChange={handleChange} />
-        </article>
+        <Profile />
+        <Inventory selected={selected} handleChange={handleChange} />
         <Projects
           projects={filtered}
           count={count}

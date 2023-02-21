@@ -51,7 +51,7 @@ function ProjectDetail({ project }) {
           </p>
         ))}
       </div>
-      <p className="project-goal">{project.desc}</p>
+      <p className="project-desc">{project.desc}</p>
     </section>
   );
 }

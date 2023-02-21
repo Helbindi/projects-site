@@ -5,6 +5,9 @@ import ProjectDetail from "./ProjectDetail";
 function Projects({ projects, count, handleIncrement, handleDecrement }) {
   return (
     <div className="projects-body">
+      <h2 className="projects-header">
+        Projects {count + 1} / {projects.length}
+      </h2>
       <section className="project-slider">
         <button className="prev-btn btn" onClick={(e) => handleDecrement(e)}>
           <img

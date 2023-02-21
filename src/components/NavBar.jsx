@@ -1,6 +1,6 @@
 import React from "react";
-import menuImg from "../assets/icons8-menu-50.png";
-import closeImg from "../assets/icons8-close-50.png";
+import menuImg from "../assets/menu.png";
+import closeImg from "../assets/close.png";
 
 function NavBar({ projects, count, navOpen, handleNav }) {
   const hamburgerBtn = (
