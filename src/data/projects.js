@@ -63,4 +63,13 @@ export const projects = [
     figma:
       "https://www.figma.com/file/dBD47hwl2L3D2fznqmpfnL/DNF-Duel?node-id=0%3A1",
   },
+  {
+    name: "Crowdfunding Page",
+    link: "https://helbindi-crowdfunding-page.vercel.app/",
+    github: "https://github.com/Helbindi/Crowdfund-Product",
+    technologies: ["React"],
+    desc: "A solution for a challenge from Frontendmentor.io to create a product page based on a given design specification.",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/front-end-glossary.appspot.com/o/projects%2Fcrowdfund.png?alt=media",
+  },
 ];
