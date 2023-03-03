@@ -66,7 +66,7 @@ export const projects = [
   {
     name: "Frontend Mentor Solutions",
     link: "https://www.frontendmentor.io/profile/Helbindi",
-    technologies: ["React", "Design"],
+    technologies: ["React", "Figma"],
     desc: "A collection of solutions I have submitted to Frontendmentor.io. The overall goal of these challenges are to create projects based on the given design images and styling guidelines.",
     image:
       "https://firebasestorage.googleapis.com/v0/b/front-end-glossary.appspot.com/o/projects%2Ffrontendmentor.png?alt=media",
